@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types'
 
 const App = ({children}) => {
-  return <div className="App">{children}</div>
+  return (
+    <div className="mv-Ap">
+      <header>Hola movies</header>
+      {children}
+    </div>
+  )
 }
 
-export default App
-
+App.displayName = 'App'
 App.propTypes = {
   children: PropTypes.children
 }
+
+export default App
