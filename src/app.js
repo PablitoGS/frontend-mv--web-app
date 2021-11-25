@@ -1,9 +1,8 @@
+/* eslint-disable no-console */
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Router from 'react-router/lib/Router'
-import match from 'react-router/lib/match'
-import browserHistory from 'react-router/lib/browserHistory'
+import {Router, match, browserHistory} from '@s-ui/react-router'
 import routes from './routes'
 
 import withContext from '@s-ui/hoc/lib/withContext'
