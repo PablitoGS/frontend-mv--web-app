@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 const App = ({children}) => {
   return (
     <div className="mv-Ap">
-      <header>Hola movies</header>
+      <header>
+        <h1>MOVIES</h1>
+      </header>
       {children}
     </div>
   )
