@@ -7,14 +7,17 @@ const loadHomePage = loadPage(contextFactory, () =>
   import(/* webpackChunkName: "Home" */ './pages/Home')
 )
 const LoadMovieDetails = loadPage(contextFactory, () =>
-  import(/* webpackChunkName: "Home" */ './pages/MovieDetails')
+  import(/* webpackChunkName: "MovieDetails" */ './pages/MovieDetails')
 )
-
+const SearchResults = loadPage(contextFactory, () =>
+  import(/* webpackChunkName: "SearchResults" */ './pages/SearchResults')
+)
 export default (
   <Route component={require('./components/App').default}>
     <Route path="/">
       <IndexRoute getComponent={loadHomePage} />
     </Route>
+    <Route path="/search/:keyword" getComponent={SearchResults} />
     <Route path="/detail" getComponent={LoadMovieDetails} />
   </Route>
 )

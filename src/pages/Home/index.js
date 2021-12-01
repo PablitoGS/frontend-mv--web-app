@@ -1,6 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
+import ThumbnailPicture from '@frontend-mv--uilib-components/sui-thumbnail-picture'
+import ThumbnailPictureList from '@frontend-mv--uilib-components/sui-thumbnail-list'
 
 import './index.scss'
 
@@ -8,7 +10,6 @@ import Context from '@s-ui/react-context'
 
 const Home = (_, {i18n}) => {
   const [movies, setMovies] = useState([])
-
   const {domain} = useContext(Context)
 
   useEffect(() => {
@@ -28,19 +29,24 @@ const Home = (_, {i18n}) => {
   return (
     <>
       <Helmet>
+        <title>Movies</title>
         <link rel="canonical" href="http://spa.mock/" />
       </Helmet>
-      <h2>Popular movies</h2>
-      <ul className="list">
-        {movies.map(movie => (
-          <li key={movie.id}>
-            {movie.title}
-            <div>
-              <img width="500" src={movie.posterPath} alt="" />
-            </div>
-          </li>
-        ))}
-      </ul>
+
+      <main className="mv-Layout">
+        <h2 className="mv-HomeTitle">Popular movies</h2>
+        <ThumbnailPictureList>
+          {movies.map(movie => (
+            <ThumbnailPictureList.Item key={movie.id}>
+              <ThumbnailPicture
+                src={movie.posterPath}
+                alt={movie.title}
+                caption={movie.title}
+              />
+            </ThumbnailPictureList.Item>
+          ))}
+        </ThumbnailPictureList>
+      </main>
     </>
   )
 }
