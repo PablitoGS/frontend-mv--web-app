@@ -6,7 +6,8 @@ import {Link, useRouter} from '@s-ui/react-router'
 
 import './index.scss'
 
-const textPlaceholder = '... Escribe aquí'
+const textPlaceholder = '... Escribe aquí la película'
+const textButton = 'BUSCAR'
 const textHeading = 'Movies'
 
 const App = ({children}) => {
@@ -14,7 +15,7 @@ const App = ({children}) => {
   const router = useRouter()
 
   const searchMovie = () => {
-    router.push(`/search/ ${keyword}`)
+    router.push(`/search/${keyword}`)
   }
   const inputSearch = e => {
     setKeyword(e.target.value)
@@ -30,6 +31,7 @@ const App = ({children}) => {
           placeholder={textPlaceholder}
           handleChange={inputSearch}
           handleClick={searchMovie}
+          textButton={textButton}
         />
       </HeaderBase>
       <main className="mv-Layout">{children}</main>

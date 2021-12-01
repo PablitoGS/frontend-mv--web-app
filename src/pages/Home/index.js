@@ -13,18 +13,14 @@ const Home = (_, {i18n}) => {
   const {domain} = useContext(Context)
 
   useEffect(() => {
-    getMovies()
-
-    function getMovies() {
-      return domain
-        .get('get_movies_use_case')
-        .execute()
-        .then(movies => {
-          const movie = movies
-          setMovies(movie)
-        })
-    }
-  }, [])
+    domain
+      .get('get_movies_use_case')
+      .execute()
+      .then(movies => {
+        const movie = movies
+        setMovies(movie)
+      })
+  }, [domain])
 
   return (
     <>

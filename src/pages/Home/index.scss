@@ -1,12 +1,7 @@
 @import '~frontend-mv--uilib-theme/lib/index';
 @import '@frontend-mv--uilib-components/sui-thumbnail-picture/lib/index';
-@import '@frontend-mv--uilib-components/sui-thumbnail-picture/lib/index';
 @import '@frontend-mv--uilib-components/sui-thumbnail-list/lib/index';
 
-.mv-Layout {
-  max-width: 1024px;
-  margin: 0 auto;
-}
 .mv-HomeTitle {
   font-size: $fz-xl;
   margin-bottom: $m-l;

@@ -35,7 +35,7 @@
     "@s-ui/mono": "^2.18.0",
     "@s-ui/precommit": "^2.14.0",
     "@s-ui/ssr": "^7.42.0",
-    "husky": "^4.3.0"
+    "husky": "4.3.0"
   },
   "husky": {
     "hooks": {
