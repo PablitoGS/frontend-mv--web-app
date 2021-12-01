@@ -1,6 +1,13 @@
 @import '~frontend-mv--uilib-theme/lib/index';
 @import '@frontend-mv--uilib-components/sui-header-base/lib/index';
+@import '@frontend-mv--uilib-components/sui-header-search/lib/index';
 
 .mv-Heading {
   font-size: $fz-xxxl;
+}
+
+.mv-Layout {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: $p-xxl 0;
 }

@@ -6,6 +6,8 @@ import './index.scss'
 import ThumbnailPicture from '@frontend-mv--uilib-components/sui-thumbnail-picture'
 import ThumbnailPictureList from '@frontend-mv--uilib-components/sui-thumbnail-list'
 
+const textSearchResultsTitle = 'Resultados para: '
+
 const SearchResults = ({params}) => {
   const {keyword} = params
   const [movies, setMovies] = useState([])
@@ -23,8 +25,10 @@ const SearchResults = ({params}) => {
   }, [URL])
 
   return (
-    <main className="mv-Layout">
-      <h2 className="SearchResults-heading">Resultados para: {keyword}</h2>
+    <>
+      <h2 className="SearchResults-heading">
+        {textSearchResultsTitle} <strong>{keyword}</strong>
+      </h2>
       <ThumbnailPictureList>
         {movies.map(movie => (
           <ThumbnailPictureList.Item key={movie.id}>
@@ -36,7 +40,7 @@ const SearchResults = ({params}) => {
           </ThumbnailPictureList.Item>
         ))}
       </ThumbnailPictureList>
-    </main>
+    </>
   )
 }
 

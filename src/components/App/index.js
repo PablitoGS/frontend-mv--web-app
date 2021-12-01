@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types'
 import {useState} from 'react'
 import HeaderBase from '@frontend-mv--uilib-components/sui-header-base'
+import HeaderSearch from '@frontend-mv--uilib-components/sui-header-search'
 import {Link, useRouter} from '@s-ui/react-router'
-
-import SearchMovies from '../SearchMovies'
 
 import './index.scss'
 
-const txtPlaceholder = 'BUSCAR PELICULAS'
+const textPlaceholder = '... Escribe aquí'
+const textHeading = 'Movies'
 
 const App = ({children}) => {
   const [keyword, setKeyword] = useState('')
   const router = useRouter()
 
   const searchMovie = () => {
-    router.push(`/search/${keyword}`)
+    router.push(`/search/ ${keyword}`)
   }
   const inputSearch = e => {
     setKeyword(e.target.value)
@@ -23,18 +23,16 @@ const App = ({children}) => {
     <>
       <HeaderBase>
         <Link to="/">
-          <h1 className="mv-Heading">Movies</h1>
+          <h1 className="mv-Heading">{textHeading}</h1>
         </Link>
+        <HeaderSearch
+          value={keyword}
+          placeholder={textPlaceholder}
+          handleChange={inputSearch}
+          handleClick={searchMovie}
+        />
       </HeaderBase>
-
-      <SearchMovies
-        value={keyword}
-        placeholder={txtPlaceholder}
-        handleChange={inputSearch}
-        handleClick={searchMovie}
-      />
-
-      {children}
+      <main className="mv-Layout">{children}</main>
     </>
   )
 }

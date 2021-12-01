@@ -33,20 +33,18 @@ const Home = (_, {i18n}) => {
         <link rel="canonical" href="http://spa.mock/" />
       </Helmet>
 
-      <main className="mv-Layout">
-        <h2 className="mv-HomeTitle">Popular movies</h2>
-        <ThumbnailPictureList>
-          {movies.map(movie => (
-            <ThumbnailPictureList.Item key={movie.id}>
-              <ThumbnailPicture
-                src={movie.posterPath}
-                alt={movie.title}
-                caption={movie.title}
-              />
-            </ThumbnailPictureList.Item>
-          ))}
-        </ThumbnailPictureList>
-      </main>
+      <h2 className="mv-HomeTitle">Popular movies</h2>
+      <ThumbnailPictureList>
+        {movies.map(movie => (
+          <ThumbnailPictureList.Item key={movie.id}>
+            <ThumbnailPicture
+              src={movie.posterPath}
+              alt={movie.title}
+              caption={movie.title}
+            />
+          </ThumbnailPictureList.Item>
+        ))}
+      </ThumbnailPictureList>
     </>
   )
 }
