@@ -12,6 +12,8 @@ const Home = (_, {i18n}) => {
   const [movies, setMovies] = useState([])
   const {domain} = useContext(Context)
 
+  const HOME_TITLE = 'Películas populares'
+
   useEffect(() => {
     domain
       .get('get_movies_use_case')
@@ -29,7 +31,7 @@ const Home = (_, {i18n}) => {
         <link rel="canonical" href="http://spa.mock/" />
       </Helmet>
 
-      <h2 className="mv-HomeTitle">Popular movies</h2>
+      <h2 className="mv-HomeTitle">{HOME_TITLE}</h2>
       <ThumbnailPictureList>
         {movies.map(movie => (
           <ThumbnailPictureList.Item key={movie.id}>
@@ -37,6 +39,7 @@ const Home = (_, {i18n}) => {
               src={movie.posterPath}
               alt={movie.title}
               caption={movie.title}
+              path={`/details/${movie.id}`}
             />
           </ThumbnailPictureList.Item>
         ))}

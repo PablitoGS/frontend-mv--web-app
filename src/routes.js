@@ -18,6 +18,6 @@ export default (
       <IndexRoute getComponent={loadHomePage} />
     </Route>
     <Route path="/search/:keyword" getComponent={SearchResults} />
-    <Route path="/detail" getComponent={LoadMovieDetails} />
+    <Route path="/details/:id" getComponent={LoadMovieDetails} />
   </Route>
 )

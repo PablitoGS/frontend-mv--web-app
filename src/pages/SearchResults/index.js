@@ -30,17 +30,25 @@ const SearchResults = ({params}) => {
       <h2 className="SearchResults-heading">
         {textSearchResultsTitle} <strong>{keyword}</strong>
       </h2>
-      <ThumbnailPictureList>
-        {movies.map(movie => (
-          <ThumbnailPictureList.Item key={movie.id}>
-            <ThumbnailPicture
-              src={movie.posterPath}
-              alt={movie.title}
-              caption={movie.title}
-            />
-          </ThumbnailPictureList.Item>
-        ))}
-      </ThumbnailPictureList>
+      {movies.length ? (
+        <ThumbnailPictureList>
+          {movies.map(movie => (
+            <ThumbnailPictureList.Item key={movie.id}>
+              <ThumbnailPicture
+                src={movie.posterPath}
+                alt={movie.title}
+                caption={movie.title}
+                path={`/details/${movie.id}`}
+              />
+            </ThumbnailPictureList.Item>
+          ))}
+        </ThumbnailPictureList>
+      ) : (
+        <p className="SearchResults-error">
+          No hay películas que mostrar. Prueba otra búsqueda o revisa si lo has
+          escrito correctamente
+        </p>
+      )}
     </>
   )
 }

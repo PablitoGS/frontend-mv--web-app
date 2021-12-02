@@ -14,7 +14,10 @@ const App = ({children}) => {
   const [keyword, setKeyword] = useState('')
   const router = useRouter()
 
-  const searchMovie = () => {
+  const searchMovie = e => {
+    if (keyword === '') {
+      return null
+    }
     router.push(`/search/${keyword}`)
   }
   const inputSearch = e => {

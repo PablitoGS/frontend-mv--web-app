@@ -2,7 +2,15 @@
 @import '@frontend-mv--uilib-components/sui-thumbnail-picture/lib/index';
 @import '@frontend-mv--uilib-components/sui-thumbnail-list/lib/index';
 
-.SearchResults-heading {
-  font-size: $fz-xl;
-  margin-bottom: $m-l;
+.SearchResults {
+  &-heading {
+    font-size: $fz-xl;
+    margin-bottom: $m-l;
+  }
+
+  &-error {
+    color: $c-gray-light-2;
+    font-size: $fz-xxxl;
+    margin-top: $m-xxl;
+  }
 }
