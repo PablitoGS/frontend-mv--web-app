@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
+import {Link} from '@s-ui/react-router'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import ThumbnailPicture from '@frontend-mv--uilib-components/sui-thumbnail-picture'
@@ -35,12 +36,13 @@ const Home = (_, {i18n}) => {
       <ThumbnailPictureList>
         {movies.map(movie => (
           <ThumbnailPictureList.Item key={movie.id}>
-            <ThumbnailPicture
-              src={movie.posterPath}
-              alt={movie.title}
-              caption={movie.title}
-              path={`/details/${movie.id}`}
-            />
+            <Link to={`/details/${movie.id}`}>
+              <ThumbnailPicture
+                src={movie.posterPath}
+                alt={movie.title}
+                caption={movie.title}
+              />
+            </Link>
           </ThumbnailPictureList.Item>
         ))}
       </ThumbnailPictureList>
