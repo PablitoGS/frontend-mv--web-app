@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import {useState} from 'react'
 import HeaderBase from '@frontend-mv--uilib-components/sui-header-base'
 import HeaderSearch from '@frontend-mv--uilib-components/sui-header-search'
+import Layout from '@frontend-mv--uilib-components/sui-layout-base'
 import {Link, useRouter} from '@s-ui/react-router'
 
 import './index.scss'
@@ -37,7 +38,7 @@ const App = ({children}) => {
           textButton={textButton}
         />
       </HeaderBase>
-      <main className="mv-AppLayout">{children}</main>
+      <Layout>{children}</Layout>
     </>
   )
 }
