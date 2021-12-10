@@ -2,11 +2,11 @@
 @import '@frontend-mv--uilib-components/sui-header-base/lib/index';
 @import '@frontend-mv--uilib-components/sui-header-search/lib/index';
 
-.mv-Heading {
+.mv-AppHeading {
   font-size: $fz-xxxl;
 }
 
-.mv-Layout {
+.mv-AppLayout {
   max-width: 1024px;
   margin: 0 auto;
   padding: $p-xxl 0;

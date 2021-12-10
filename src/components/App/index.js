@@ -27,7 +27,7 @@ const App = ({children}) => {
     <>
       <HeaderBase>
         <Link to="/">
-          <h1 className="mv-Heading">{textHeading}</h1>
+          <h1 className="mv-AppHeading">{textHeading}</h1>
         </Link>
         <HeaderSearch
           value={keyword}
@@ -37,7 +37,7 @@ const App = ({children}) => {
           textButton={textButton}
         />
       </HeaderBase>
-      <main className="mv-Layout">{children}</main>
+      <main className="mv-AppLayout">{children}</main>
     </>
   )
 }
