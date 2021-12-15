@@ -2,6 +2,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import Context from '@s-ui/react-context'
+import {Link} from '@s-ui/react-router'
 
 import './index.scss'
 
@@ -34,12 +35,14 @@ const SearchResults = ({params}) => {
         <ThumbnailPictureList>
           {movies.map(movie => (
             <ThumbnailPictureList.Item key={movie.id}>
-              <ThumbnailPicture
-                src={movie.posterPath}
-                alt={movie.title}
-                caption={movie.title}
-                path={`/details/${movie.id}`}
-              />
+              <Link to={`/details/${movie.id}`}>
+                <ThumbnailPicture
+                  src={movie.posterPath}
+                  alt={movie.title}
+                  caption={movie.title}
+                  path={`/details/${movie.id}`}
+                />
+              </Link>
             </ThumbnailPictureList.Item>
           ))}
         </ThumbnailPictureList>
