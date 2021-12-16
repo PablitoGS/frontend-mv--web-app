@@ -14,6 +14,7 @@ const textSearchResultsTitle = 'Resultados para: '
 const SearchResults = ({params}) => {
   const {keyword} = params
   const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(true)
   const {domain} = useContext(Context)
 
   useEffect(() => {
@@ -23,8 +24,11 @@ const SearchResults = ({params}) => {
       .then(movies => {
         const movie = movies
         setMovies(movie)
+        setLoading(false)
       })
   }, [domain, keyword])
+
+  if (loading) return <i>Cargando...</i>
 
   return (
     <>
