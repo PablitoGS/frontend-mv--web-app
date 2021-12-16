@@ -17,7 +17,7 @@ const App = ({children}) => {
 
   const searchMovie = e => {
     if (keyword === '') {
-      return null
+      return alert('Debes introducir una búsqueda')
     }
     router.push(`/search/${keyword}`)
   }
